@@ -14,6 +14,15 @@ print (h1.name)
 print (h2.name)
 h1.say_hello()
 """
+# Vytvoření souboru file1.txt
+with open('file1.txt', 'w') as f:
+    f.write("Ahoj světe!\nToto je první soubor.\nMá tři řádky.\n")
+
+# Vytvoření souboru file2.txt
+with open('file2.txt', 'w') as f:
+    f.write("Ahoj světe!\nToto je druhý soubor.\nMá také tři řádky.\n")
+
+
 import re
 
 class TextFileProcessor:
