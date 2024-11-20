@@ -42,6 +42,7 @@ class letadlo:
         return f"{self.numerator}/{self.denominator}"
 """
 import csv
+
 class Airplane:
     def __init__(self, airplane_type, max_passengers):
         self.airplane_type = airplane_type
@@ -84,9 +85,15 @@ class Airplane:
     def __str__(self):
         return f"Airplane(type={self.airplane_type}, max_passengers={self.max_passengers}, current_passengers={self.current_passengers})"
 
-    def save_to_csv(self, param):
-        pass
-
+    def save_to_csv(self, file_name):
+        try:
+            with open(file_name, mode='w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(["Airplane Type", "Max Passengers", "Current Passengers"])
+                writer.writerow([self.airplane_type, self.max_passengers, self.current_passengers])
+            print(f'Soubor {file_name} byl úspěšně vytvořen a zapsán.')
+        except Exception as e:
+            print(f'Došlo k chybě při vytváření souboru: {e}')
 
 # Příklad použití
 plane1 = Airplane("Boeing 747", 416)
@@ -102,5 +109,9 @@ print(plane1)  # Aktuální počet cestujících: 40
 
 print(plane1 > plane2)  # False, Airbus A380 má vyšší kapacitu
 print(plane1 < plane2)  # True, Boeing 747 má nižší kapacitu
-plane1.save_to_csv ("plane1.csv")
+
+# Uložení výsledku do CSV
+plane1.save_to_csv('plane1.csv')
+plane2.save_to_csv('plane2.csv')
+
 
