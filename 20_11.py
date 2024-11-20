@@ -16,11 +16,11 @@ h1.say_hello()
 """
 # Vytvoření souboru file1.txt
 with open('file1.txt', 'w') as f:
-    f.write("Ahoj světe!\nToto je první soubor.\nMá tři řádky.\n")
+    f.write("Ahoj svete!\nToto je prvni soubor.\nMa tri radky.\n")
 
 # Vytvoření souboru file2.txt
 with open('file2.txt', 'w') as f:
-    f.write("Ahoj světe!\nToto je druhý soubor.\nMá také tři řádky.\n")
+    f.write("Ahoj svete!\nToto je druhy soubor.\nMa take tri radky.\n")
 
 
 import re
